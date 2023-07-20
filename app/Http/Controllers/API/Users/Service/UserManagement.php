@@ -5,10 +5,10 @@ namespace App\Http\Controllers\API\Users\Service;
 /** Core Module - Business login should be setup here. High-Level Module */
 class UserManagement {
 
-    public function register_user(Array $user_class_extensions, String $classname) : void {
+    public function register_user(Array $user_extensions, String $module) : void {
 
-        foreach( $user_class_extensions as $extension ) {
-            if ( $this->get_classname_without_namespace($extension) == $classname ) {
+        foreach( $user_extensions as $extension ) {
+            if ( $this->get_classname_without_namespace($extension) == $module ) {
                 $extension->register_user();
             }
         }
